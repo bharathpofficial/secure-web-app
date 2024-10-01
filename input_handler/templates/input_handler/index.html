@@ -1,0 +1,21 @@
+<!-- input_handler/templates/input_handler/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Injection Detector</title>
+</head>
+<body>
+    <h1>SQL Injection Detector</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+    </form>
+
+    {% if warning %}
+        <p style="color: red;">{{ warning }}</p>
+    {% endif %}
+</body>
+</html>
